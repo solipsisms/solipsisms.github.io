@@ -1,3 +1,3 @@
 # solipsisms.github.io
 
-test
+my portfolio, an easy way to access the live demo links to my projects
