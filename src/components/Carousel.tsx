@@ -17,7 +17,7 @@ const Carousel: React.FC<CarouselProps> = ({ media }) => {
     };
 
     return (
-        <div className="w-full max-w-full flex">
+        <div className="w-full max-w-full flex my-2">
             <div className="
                 max-w-5xl
                 min-w-6 
