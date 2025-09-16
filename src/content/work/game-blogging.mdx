@@ -1,0 +1,121 @@
+---
+title: |
+  game blogging and review
+kind: university project
+icon: ./content/game-blogging/icon.png
+description: |
+  create, edit, and delete posts and comments categorized first by game 
+  then a story event or quest, with the ability to follow your favorite bloggers.
+tech:
+  - react
+  - react bootstrap
+  - typescript
+  - dotnet 9
+  - entity framework
+  - sqlite
+  - python
+  - postgresql
+  - azure
+info: |
+  university project: june 2025
+order: 4
+---
+{/* react slider in Carousel component does not support ssr, tell astro not to use it with client:only="react" */}
+import Carousel from "../../components/Carousel"
+import Medium from "../../components/Medium.astro"
+
+<h3>background</h3>
+as i have been playing more story-driven games, my sister and i often discuss new characters, events, and quests. 
+often, we reference posts from on social media platforms like twitter, reddit and tiktok. in larger fandoms, there is 
+no shortage of content: personality breakdowns, design analyses, lore deep dives, and funny moments. 
+<br />
+
+the challenge is that finding these posts later is almost impossible, unless you saved them yourself. for a new 
+player experiencing old content, discovering posts from the original release period is incredibly difficult. even 
+when posts on social media platforms are tagged, it is usually only with the game's IP, making discovery of old 
+content inconsistent. 
+<br/>
+
+i set out to create a web app where posts tied to specific game questsand storylines can be organized, categorized, 
+and revisisted long after release.
+<br />
+
+<h3>features demo</h3>
+
+<br />
+
+<h4>create a new post</h4>
+<Medium>
+    <img src="/content/game-blogging/1.gif" className="medium"/>
+    <p class="medium-alt"></p>
+</Medium>
+users can create posts tied to specific stories across four games. each game has its own categorization system.
+for example, <i>Genshin Impact</i> has three types of story content: <b>Flagship Events</b>, <b>Story Quests</b>, 
+and <b>Archon Quests</b>. Archon Quests can be further divided into chapters.
+<br />
+
+to create a post, users select a game (or enter the name of another), provide a title and rating, and optionally 
+select a story and enter body content.
+<br />
+
+<h4>sort posts by date, likes, or comments</h4>
+<Medium>
+    <img src="/content/game-blogging/2.gif" className="medium"/>
+    <p class="medium-alt"></p>
+</Medium>
+on the global home page, following feed, and on each game's page, posts can be sorted by 
+creation time, likes on posts, or comments (referred to as "Activity").
+<br />
+
+<h4>filter posts by game</h4>
+<Medium>
+    <img src="/content/game-blogging/3.gif" className="medium"/>
+    <p class="medium-alt"></p>
+</Medium>
+each game has its own homepage where users can browse only posts related to that game. sidebars lets users 
+filter by stories. there is also an "All Other Games" page for uncategorized posts.
+<br />
+
+<h4>filter posts by a game's story</h4>
+<Medium>
+    <img src="/content/game-blogging/4.gif" className="medium"/>
+    <p class="medium-alt"></p>
+</Medium>
+users can navigate directly to feeds for specific stories either through a sidebar link or by clicking on 
+a categorized post.
+<br />
+
+<h4>view and respond to a comment</h4>
+<Medium>
+    <img src="/content/game-blogging/5.gif" className="medium"/>
+    <p class="medium-alt">view a comment's thread and write a comment</p>
+</Medium>
+comments can be viewed as thread posts. clicking on the comment count opens an editor for writing a reply.
+<br />
+
+<h4>follow a user</h4>
+<Medium>
+    <img src="/content/game-blogging/6.gif" className="medium"/>
+    <p class="medium-alt"></p>
+</Medium>
+users can follow other users to ensure their posts appear in the following feed.
+<br />
+
+<h3> tech stack & development </h3>
+\>> <b>React</b>: matched frontend types with backend models for type safety. connected a React frontend to a 
+.NET 9 backend.
+
+\>> <b>React Bootstrap</b>: utilized prebuilt components to accelerate frontend development.
+
+\>> <b>.NET 9 & Entity Framework</b>: learned .NET from scratch, built a REST API, and worked with SQLite locally 
+before deploying to PostgreSQL. implemented registration and login with encrypted credentials.
+
+\>> <b>Azeru & PostgreSQL</b>: gained hands-on experience deploying frontend, backend and database in the cloud.
+<br />
+
+<h3>key takeaways</h3>
+this project reflects my ability to:
+\>> build a simple, cohesive and functional frontend from scratch
+\>> implement authentication and authorization 
+\>> work end-to-end across frontend, backend, and database layers
+\>> adapt quickly to new frameworks and technologies

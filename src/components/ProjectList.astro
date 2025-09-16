@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectPreview from './ProjectPreview.astro';
+
+const projects = (await getCollection('work'));
+const sortedProjects = 
+	projects
+		.sort((a, b) => a.data.order - b.data.order)
+		
+---
+
+<div>
+			<!-- list techs across all projects
+			<div>
+				{projects.map((project) => {
+					return (
+						<div data-id={project.id}>
+							{project.data.tech?.map((tech: string) => {
+								return (
+									<Pill text={tech} />
+								)
+							})}
+						</div>
+					)
+				})}
+			</div> -->
+
+			<div>
+				{sortedProjects.map((project) => {
+					return (
+						<ProjectPreview project={project} />
+					)
+				})}
+			</div>
+</div>

@@ -1,0 +1,11 @@
+---
+tech:
+  - tailwindcss
+  - git
+  - github
+  - arcgis pro
+  - android studio
+  - kotlin
+  - java
+  - astro
+---

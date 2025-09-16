@@ -1,0 +1,150 @@
+---
+title: |
+  capstone project: the brown house community forms
+kind: university project
+icon: /content/tbhe-forms/icon.png
+description: |
+  participant intake forms for monthly and yearly events, stripe payment processing included.
+tech:
+  - aws
+  - linux
+  - git
+  - mongodb
+  - apache
+  - gunicorn
+  - python
+  - flask
+  - react
+  - javascript
+  - jira
+info: |
+  university project: january 2025 - march 2025
+order: 2
+---
+{/* react slider in Carousel component does not support ssr, tell astro not to use it with client:only="react" */}
+import Carousel from "../../components/Carousel"
+
+<h3>background</h3>
+in a team of nine students, we delegated roles, planned out the infrastructure, designed, built and tested software in an agile-style 
+development cycle for a client of a non-profit organization. our goal was to consolidate the organization's current intake process for 
+participants of their yearly Trade Day and monthly Academy Day events, as they were using Google Forms, Eventbrite, and Mailchimp. over four weeks,
+we delivered a web application that consolidated the tools of Google Forms and Eventbrite, creating one home for paid and unpaid registrations 
+alike, while also eliminating some of the manual work associated with Mailchimp.
+<br/>
+
+<Carousel media={[
+  ["/content/tbhe-forms/01.webp", "view of the admin dashboard. colors are used to distinguish between trade day and academy events. the admin can also see how many spots are currently occupied, and open a menu for each form."],
+  ["/content/tbhe-forms/02.webp", "participant view: a sample form's information header. the text can be customized with italics, bold and underline, the location and date(s) are at the top, with remaining spots just underneath."],
+  ["/content/tbhe-forms/03.webp", "additional questions can be of type radio button, checkboxes, text, date, and number. depending on the spots remaining, or if the form is paid, the submit button changes correspondingly."],
+  ["/content/tbhe-forms/05.webp", "the admin can export data to a csv file to be imported into mailchimp, delete participants, and see if there are any pending payments or participants on the wailist."],
+]} client:only="react" />
+<br/>
+
+<h3>my role: webmaster</h3>
+<b>as i was primarily responsible for hosting and deployment i:</b>
+
+-set up a (L)inux (A)pache (M)ongoDB (Py)thon stack on an AWS EC2 instance.
+
+-configured Apache to serve static files and proxy API requests to the backend.
+
+-built and managed a MongoDB Community Server with the CLI.
+
+-implemeneted environment-based API calls with Axios so the app could switch seamlessly between local and production environments.
+
+-monitored GitHub changes and made PRs with deployment adjustments before rebuilding on the server.
+<br />
+
+<b>however, i also worked on and collaborated on other critical features:</b>
+
+-<b>Stripe payment processing:</b> prepared server security and worked closely with another teammate to test successful, failed and timed-out 
+payments.
+
+-<b>Transactional emails:</b> designed, implemented and tested automated emails triggered by registration status (successful, waitlisted, 
+failed/timeout).
+
+-<b>Documentation:</b> co-authored parts of the developer guide detailing the server stack for future maintainers.
+<br />
+
+below are the transactional emails mentioned above.
+<Carousel media={[
+  ["/content/tbhe-forms/06.webp", "transactional email: successful registration"],
+  ["/content/tbhe-forms/07.webp", "transactional email: waitlisted"],
+  ["/content/tbhe-forms/08.webp", "transactional email: unsuccessful payment"],
+  ["/content/tbhe-forms/09.webp", "transactional email: successful payment"],
+]} client:only="react" />
+<br/>
+
+<h3>reflection</h3>
+
+after the forming of our teams, our professor led with the lack of an obligation to implement payment, as it had 
+proved too difficult for teams in the past. <i>trailblazers</i>, as they called us, we were inspired and dedicated to 
+be the first to provide a client with the native ability to accept payment. and, we did it.
+<br />
+
+this project also gave me real experience in:
+
+-working in a large team, Agile-style
+
+-Git collaboration (especially during “the great merge”)
+
+-deployment, API integration, and server security in a live client project
+
+<br />
+<div className="                   
+  p-2 
+  m-2
+  mx-4
+  bg-sky-900 
+  text-gray-800 
+  outline-sky-700
+
+  dark:bg-sky-900 
+  dark:text-gray-300
+  dark:outline-sky-700
+
+  rounded-md
+  outline-2
+
+  flex
+">
+  this project was delivered to a real client on an AWS instance for internal purposes. i cannot provide a public demo, but the 
+  screenshots above highlight the delivered features.
+</div>
+<br/>
+
+<div className="                   
+  p-2 
+  m-2
+  mx-4
+  bg-sky-900 
+  text-gray-800 
+  outline-sky-700
+
+  dark:bg-sky-900 
+  dark:text-gray-300
+  dark:outline-sky-700
+
+  rounded-md
+  outline-2
+
+  flex
+  flex-col
+">
+  i would \<3 to credit all of my amazing team members:
+  <div className="flex justify-around p-2 m-2">
+    <div>
+      <p><u>frontend:</u></p>
+        <p>aimun anwer: product owner</p>
+        <p>anh luong: scrum master</p>
+        <p>ayesha khan</p>
+        <p>hamza mirza</p>
+    </div>
+    <div>
+      <p><u>backend:</u></p>
+        <p>serhat cingilli: software architect</p>
+        <p>iquoc tran</p>
+        <p>max kenner</p>
+        <p>tatiana goodman: documentation lead</p>
+    </div>
+  </div>
+</div>

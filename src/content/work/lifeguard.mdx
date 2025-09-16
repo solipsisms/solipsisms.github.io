@@ -1,0 +1,157 @@
+---
+title: |
+  student intern: lifeguard community
+kind: internship
+icon: /content/lifeguard/icon.png
+description: |
+  modules and lessons modeled after book "the lifeguard", granting individuals
+  a new path to follow after incarceration, with assignments and feedback from
+  the author.
+tech:
+  - python
+  - flask
+  - apache
+  - aws
+  - react
+  - javascript
+  - mariadb
+info: |
+  internship: april 2025 - june 2025
+order: 1
+---
+{/* react slider in Carousel component does not support ssr, tell astro not to use it with client:only="react" */}
+import Carousel from "../../components/Carousel"
+import Medium from "../../components/Medium.astro"
+
+<h3>background</h3>
+
+initially, this was software built by a preivous group of students, where my assigned task was to serve the 
+group's web application to a server, and to fix security vulnerabilities tied to weak implementation of 
+role-based access control. 
+<br/>
+i successfully configured the communication between the React frontend and Flask backend using Axios and addressed CORS issues with the Google 
+Oauth implementation by leveraging Werkzeug. now, i was able to deploy the application to AWS with Apache, allowing the client and their 
+participants to reliably use it.
+<br/>
+beyond deployment, i built off of the existing codebase independently, working closely with my mentor and communicating with the client to 
+fufill their needs and wants. i extended the project by polishing existing features, adding new features, and fixing legacy bugs.
+<br/>
+
+<h3>contributions & features</h3>
+
+<h5>submission workflow improvements</h5>
+to improve the participant submission process, i redesigned the file upload system.
+<Medium>
+    <img src="/content/lifeguard/16.gif" className="medium"/>
+    <p className="medium-alt">before: two buttons with the same purpose of uploading a file, layout deforms on longer file names, and submission state persistence</p>
+</Medium>
+
+<Medium>
+    <img src="/content/lifeguard/15.gif" class="medium"/>
+    <p class="medium-alt">after: use styled button only, no more layout deforming by using ellipsis, no more submission state persistence, and add new previous submissions list.</p>
+</Medium>
+by implementing the ability for participants to download and view their submissions, they are able to reflect and grow 
+from their previous responses. however, this did lead to an issue where participants could overwrite their previous submissions, 
+or potentially overwrite and be able to download another particpant's response, as files were saved only with the file name (a big issue 
+especially where the client provides a template, and the participants leave the file name the same). i noticed very quickly and was
+able to alleviate this with uuid and timestamps in the file name.
+
+<br/>
+
+<h5>rich text support</h5>
+the original lesson editor was plain text, offering no formatting options and breaking line spacing.
+<Carousel media={[
+  ["/content/lifeguard/09.webp", "before: text editor for lesson content. no buttons for customization (like bold, italics, etc.). line breaks that show in the editor are not maintained."],
+  ["/content/lifeguard/07.webp", "after: text editor for lesson content. utilize react package tiptap to allow for lots of customization with buttons for ease of use."],
+  ["/content/lifeguard/10.webp", "before: published lesson content. customization is possible without editor changes but html knowledge is required."],
+  ["/content/lifeguard/08.webp", "after: published lesson content. the client can now not only break up content into paragraphs, but customize completely."],
+]} client:only="react" />
+
+<br/>
+
+<h5>participant dashboard</h5>
+<Carousel media={[
+  ["/content/lifeguard/01.webp", "before: modules were not centered, at the time there was no ability to create new modules either."],
+  ["/content/lifeguard/02.webp", "after: modules are centered, include cover of the book, add logo as hyperlink to the dashboard."],
+]} client:only="react" />
+
+<br/>
+
+<h5>admin dashboard</h5>
+i significantly improved the admin experience with new tools for content and user management.
+<Carousel media={[
+  ["/content/lifeguard/03.webp", "before: modules view"],
+  ["/content/lifeguard/04.webp", "after: modules view. public & private modules, and buttons for new admin functionality."],
+  ["/content/lifeguard/05.webp", "before: submissions table. only date was stored in the database, so all submission times default."],
+  ["/content/lifeguard/06.webp", "after: submission table. include more information for the client & fix broken download feature."],
+]} client:only="react" />
+
+<br/>
+<b>additional features included:</b>
+<br/>
+
+ability to hide, show and redorder modules:
+<Medium>
+    <img src="/content/lifeguard/14.gif" className="medium"/>
+    <p class="medium-alt">utilize react package dnd-kit to allow re-ordering of modules and the ability to show and hide modules.</p>
+</Medium>
+
+<br/>
+
+updated interface to create new modules and edit names and images of modules:
+<Carousel media={[
+  ["/content/lifeguard/12.webp", "new area to create a new module with a title and image. similar look when editing a module."],
+  ["/content/lifeguard/13.webp", "update dropdown to sort modules by private and public visibility."],
+]} client:only="react" />
+
+<br/>
+
+ability to manage admins:
+<Medium>
+    <img src="/content/lifeguard/11.webp" className="medium"/>
+    <p class="medium-alt">the client expressed the need to add another admin down the line. can now be done by entering their name and email. admins can also be removed. both are coupled with alerts to ensure the changes are intentional.</p>
+</Medium>
+
+<h3>impact</h3>
+
+<b>by the end of my time working on this project:</b>
+
+\>> the client received a fully deployed, secure, and feature-rich web application hosted on AWS.
+
+\>> participants gained a smoother, more reliable submission and lesson experience.
+
+\>> admins gained powerful tools to manage content and users.
+
+\>> legacy bugs and security risks were resolved, ensuring long-term stability.
+
+<br />
+<b>this project higlights my ability to:</b>
+
+\>> diagnose and resolve technical deficits quickly.
+
+\>> collaborate directly with clients.
+
+\>> extend legacy systems with new features while maintaining security and usability.
+
+<br />
+<div className="                   
+  p-2 
+  m-2
+  mx-4
+  bg-sky-900 
+  text-gray-800 
+  outline-sky-700
+
+  dark:bg-sky-900 
+  dark:text-gray-300
+  dark:outline-sky-700
+
+  rounded-md
+  outline-2
+
+  flex
+">
+  this project was delivered to a real client on an AWS instance for internal purposes. i cannot provide a public demo, but the 
+  screenshots above highlight the delivered features.
+</div>
+<br/>

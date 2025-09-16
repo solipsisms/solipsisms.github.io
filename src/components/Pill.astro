@@ -1,0 +1,50 @@
+---
+const { text } = Astro.props;
+const icon = `/icons/${text}.webp`;
+---
+
+    <!-- me-2  -->
+<span class="
+
+    <!-- todo: colors in light mode -->
+    bg-sky-900 
+    text-gray-800 
+    outline-sky-700
+
+    dark:bg-sky-900 
+    dark:text-gray-300
+    dark:outline-sky-700
+
+    text-xs 
+    font-medium 
+
+    px-2.5 
+    py-1
+    me-1.5
+    m-[0.25rem]
+
+    rounded-md 
+    outline-2
+    shadow-md
+
+    
+    shrink-0  
+
+    flex
+    items-center
+">
+        <img src={icon} alt={text + " icon"} class="
+            w-4 
+            h-4 
+            inline-block 
+            me-1.5
+            bg-sky-50
+            outline-sky-100
+            outline-1
+            rounded-sm
+            p-[0.05rem]
+        " />
+        <div>
+            {text}
+        </div>
+</span>

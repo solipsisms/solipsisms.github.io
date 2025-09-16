@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+* {
+    /* border: 1px solid white; */
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+:root {
+    overscroll-behavior: none;
+    background-color: rgb(15, 29, 61);
+}
+
+.medium {
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+}
+
+.medium-alt {
+    text-align: center !important;
+}

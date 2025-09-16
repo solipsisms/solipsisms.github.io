@@ -1,0 +1,150 @@
+---
+import TechList from "./TechList.astro";
+
+//use prop without Props interface
+const { project } = Astro.props;
+---
+
+<!-- todo: colors for light mode -->
+<div class="
+    flex 
+    flex-row 
+    p-2
+    m-4
+    bg-sky-950
+    text-gray-800 
+    outline-sky-800
+
+    dark:bg-sky-950
+    dark:text-gray-300
+    dark:outline-sky-800
+    outline-4
+    rounded-md
+">
+    <div class="
+        lg:min-w-1/8 
+        text-center 
+        flex 
+        flex-col 
+        items-center 
+        justify-center
+    ">
+        <div class="
+            m-1
+
+            rounded-md 
+            w-20 
+            h-20
+            bg-sky-950 
+            outline-sky-800
+
+            dark:bg-sky-950 
+            dark:outline-sky-800
+            outline-2
+        ">
+            <img src={project.data.icon} 
+            class="
+                w-full 
+                h-full 
+                object-contain
+                rounded-md
+            ">
+        </div>
+        <div class="flex flex-row">
+            <div class="
+                bg-sky-900 
+                text-gray-800 
+                outline-sky-700
+
+                dark:bg-sky-900 
+                dark:text-gray-300
+                dark:outline-sky-700
+
+                m-1
+                p-[0.15rem]
+
+                outline-2
+                rounded-md
+            ">
+                <a href={`/work/${project.slug}`}>
+                    more
+                </a>
+            </div>
+            {project.data.demo && (
+                <div class="
+                    bg-sky-900 
+                    text-gray-800 
+                    outline-sky-700
+
+                    dark:bg-sky-900 
+                    dark:text-gray-300
+                    dark:outline-sky-700
+
+                    m-[0.25rem]
+                    p-[0.15rem]
+
+                    outline-2
+                    rounded-md
+                ">
+                    <a href={project.data.demo} target="_blank" rel="noopener noreferrer">
+                        demo
+                    </a>
+                </div>
+            )}
+        </div>
+    </div>
+    <div>
+        <div class="
+            m-[0.75rem] 
+            p-[0.5rem] 
+            rounded-md
+            bg-sky-950 
+            text-gray-800 
+            outline-sky-800
+
+            dark:bg-sky-950 
+            dark:text-gray-300
+            dark:outline-sky-800
+            outline-2
+        ">
+            {project.data.title}
+        </div>
+        <div class="
+            m-[0.75rem] 
+            p-[0.15rem] 
+            rounded-md
+            bg-sky-950 
+            outline-sky-800
+
+            dark:bg-sky-950 
+            dark:outline-sky-800
+            outline-2
+        ">
+            <TechList project={project} />
+        </div>
+        <div class="
+            m-[0.75rem] 
+            p-[0.5rem] 
+            rounded-md
+            bg-sky-950 
+            text-gray-800 
+            outline-sky-800
+
+            dark:bg-sky-950 
+            dark:text-gray-300
+            dark:outline-sky-800
+            outline-2">
+            {project.data.description}
+        </div>
+    </div>
+</div>
+
+<style>
+    .general {
+
+    }
+</style>
+
+
+
+

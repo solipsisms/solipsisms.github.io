@@ -1,0 +1,142 @@
+---
+title: |
+  genshin impact chat generator
+kind: personal project
+icon: ./content/genshin-chat/icon.png
+description: |
+  create, edit, and delete messages to create a user-generated conversation
+  between genshin impact characters (or custom ones), with a user-interface 
+  mimicking that of the game's own messaging system.
+tech:
+  - react
+  - nextjs
+  - typescript
+  - shadcn
+  - tailwindcss
+  - figma
+  - cloudflare
+demo: https://genshin-chat.pages.dev
+info: |
+  personal project: july 2025
+order: 4
+---
+{/* react slider in Carousel component does not support ssr, tell astro not to use it with client:only="react" */}
+import Carousel from "../../components/Carousel"
+import Medium from "../../components/Medium.astro"
+
+<a href="https://genshin-chat.pages.dev" target="_blank" style="color: #fef08a"><u>live demo</u></a> 
+<br />
+<br />
+
+this project is a fan-made chat generator for <i>Genshin Impact</i>, inspired by similar tools for 
+<a href="https://hsrchat.pages.dev" target="_blank" style="color: #fef08a"><u><i>Honkai: Star Rail</i></u></a> and 
+<a href="https://zenless.tools/chat-generator" target="_blank" style="color: #fef08a"><u><i>Zenless Zone Zero</i></u></a>.
+while those communities had their own generators, <i>Genshin Impact</i>, despite having the largest playbase, did not. players would rely on 
+non-native tools with custom imports, so i was heavily inspired to build a version specifically for <i>Genshin Impact</i>.
+<br />
+
+<div className="lg:columns-2 gap-4 my-2 lg:my-4">
+  <Medium>
+    <img src="/content/genshin-chat/01.webp" className="medium mb-4"/>
+  </Medium>
+  <Medium>
+    <img src="/content/genshin-chat/02.webp" className="medium mb-4"/>
+  </Medium>
+  <Medium>
+    <img src="/content/genshin-chat/04.webp" className="medium mb-4"/>
+  </Medium>
+  <Medium>
+    <img src="/content/genshin-chat/03.webp" className="medium mb-4"/>
+  </Medium>
+</div>
+
+<h3> design & ui </h3>
+
+to achieve a cohesive look, i studied the in-game interface and designed custom SVG icons using Figma to capture the essence of 
+<i>Genshin Impact</i>. i paid attention to how the other chat generators emulated their respective games' ui and adapted that approach 
+for consistency. since <i>Genshin Impact</i> characters do not have phones to communicate with each other as they do in <i>Honkai: Star Rail</i>
+and <i>Zenless Zone Zero</i>, i based this chat generator off of the in-game chat capability between players. the resulting interface includes 
+adjustments to the design that are inspired by the game's ui rather than a direct replication, ensuring clarity and usability for users.
+<br />
+
+<h4>character selection</h4>
+<div className="lg:columns-2 my-4">
+  <div className="flex flex-col ">
+    <Medium>
+      <img src="/content/genshin-chat/1.webp" className="medium mb-4"/>
+    </Medium>
+    <div className="lg:block hidden text-center">
+      in-game avatar selector (left). my version (right) adds custom character creation.
+    </div>
+    <div className="p-2 m-2 mb-4 lg:hidden block text-center">
+      in-game avatar selector (top). my version (bottom) adds custom character creation.
+    </div>
+  </div>
+  <Medium>
+    <img src="/content/genshin-chat/2.webp" className="medium mb-4"/>
+  </Medium>
+</div>
+
+<h4>sticker selection</h4>
+<div className="lg:columns-2 my-4">
+  <div className="">
+    <Medium>
+      <img src="/content/genshin-chat/3.webp" className="medium mb-4"/>
+    </Medium>
+    <div className="lg:block hidden text-center">
+      in-game sticker menu (left). my version (right) adapts the layout for web, including arrows for straight-forward navigation.
+    </div>
+    <div className="p-2 m-2 mb-4 lg:hidden block text-center">
+      in-game sticker menu (top). my version (bottom) adapts the layout for web, including arrows for straight-forward navigation.
+    </div>
+  </div>
+  <Medium>
+      <img src="/content/genshin-chat/4.webp" className="medium mb-4"/>
+    </Medium>
+</div>
+
+<h4>example message thread comparison</h4>
+
+<div>
+  <div className="lg:columns-2 my-4">
+      <Medium>
+        <img src="/content/genshin-chat/5.webp" className="medium mb-4"/>
+      </Medium>
+      <Medium>
+        <img src="/content/genshin-chat/7.webp" className="medium mb-4"/>
+      </Medium>
+  </div>
+  <div className="lg:block hidden text-center">
+    in-game conversation (left) and my custom conversation (right). example message thread comparison: adapted typography and spacing for readability.
+  </div>
+  <div className="p-2 m-2 mb-4 lg:hidden block text-center">
+    in-game conversation (top) and my custom conversation (bottom). example message thread comparison: adapted typography and spacing for readability.
+  </div>
+</div>
+<br />
+
+<h3>key features</h3>
+\>> create, edit, delete, and reorder messages  
+\>> switch message sides and change characters  
+\>> upload images and add custom characters
+\>> save chats locally for future editing  
+\>> export complete conversations as shareable images
+<br />
+
+<h3> tech stack & development </h3>
+\>> <b>React (Next.js)</b>: i furthered my understanding of component abstraction, the Context API and clean state management.
+
+\>> <b>Typescript</b>: became more comfortable utilizing type safety, making debugging and refactoring much smoother than my past experiences 
+with Javascript.
+
+\>> <b>TailwindCSS & shadcn/ui</b>: greatly accelerated my ability to execute the design and styling, also providing customizable components like 
+modals, popovers and alerts. 
+
+\>> <b>Cloudflare Pages</b>: enabled easy deployment by providing preview subdomains for development branches and a streamlined CI/CD pipeline.
+
+<br />
+
+<h3> key takeaways </h3>
+this project significantly improved my frontend skills, from comfort with React's ecosystem to designing a user interface from scratch with 
+references and testing it's capability on different screen sizes and devices. this project was also a chance to identify a gap in the fan 
+community and provide a solution that directly accommodates that need.

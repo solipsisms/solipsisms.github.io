@@ -1,0 +1,13 @@
+---
+import Pill from "./Pill.astro";
+
+//use prop without Props interface
+const { project } = Astro.props;
+---
+<div class="flex flex-wrap">
+    {project.data.tech?.map((tech: string) => {
+        return (
+            <Pill text={tech} />
+        )
+    })}
+</div>

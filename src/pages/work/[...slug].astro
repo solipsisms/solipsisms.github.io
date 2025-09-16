@@ -1,0 +1,123 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import TechList from '../../components/TechList.astro';
+
+interface Props {
+	project: CollectionEntry<'work'>;
+}
+
+//retrieve all projects to generate paths to be available at build time
+export async function getStaticPaths() {
+	const projects = await getCollection('work');
+	return projects.map((project) => ({
+		params: { slug: project.slug },
+		props: { project },
+	}));
+}
+
+//information of the project
+const { project } = Astro.props;
+//actual content of the project
+const { Content } = await render(project);
+---
+
+<Layout title=`${project.data.title}`>
+	<!-- goes into the slot in PageLayout.astro -->
+     <div class="
+        p-2 
+        m-1
+        sm:m-4
+
+        rounded-md 
+        outline-4
+
+        bg-sky-950 
+        text-gray-800 
+        outline-sky-800
+
+        dark:bg-sky-950 
+        dark:text-gray-300
+        dark:outline-sky-800
+     ">
+        <div class="
+            m-2
+            p-1
+
+            rounded-md 
+            outline-2
+
+            bg-sky-950 
+            text-gray-800 
+            outline-sky-800
+
+            dark:bg-sky-950 
+            dark:text-gray-300
+            dark:outline-sky-800
+        ">
+            {project.data.title}
+        </div>
+        <div class="
+            m-2
+            p-1
+
+            rounded-md 
+            outline-2
+
+            bg-sky-950 
+            text-gray-800 
+            outline-sky-800
+
+            dark:bg-sky-950 
+            dark:text-gray-300
+            dark:outline-sky-800
+        ">
+            {project.data.info}
+        </div>
+        <div class="
+            m-2
+            p-1
+
+            rounded-md 
+            outline-2
+
+            bg-sky-950 
+            text-gray-800 
+            outline-sky-800
+
+            dark:bg-sky-950 
+            dark:text-gray-300
+            dark:outline-sky-800
+        ">
+            <TechList project={project} />
+        </div>
+
+        <!-- renders the entire contents of the markdown file, including import statements -->
+        <!-- <div>
+            {project.body}
+        </div> -->
+
+        <!-- use Content instead -->
+        <div class="
+            m-2
+            p-4
+
+            rounded-md 
+            outline-2
+
+            bg-sky-950 
+            text-gray-800 
+            outline-sky-800
+
+            dark:bg-sky-950 
+            dark:text-gray-300
+            dark:outline-sky-800
+
+            
+        ">
+            <article class="prose max-w-none [&_h3]:text-2xl [&_h3]:font-semibold [&_h4]:text-xl [&_h4]:font-semibold [&_h5]:text-lg [&_h5]:font-semibold">
+                <Content />
+            </article>
+        </div>
+     </div>
+</Layout>
