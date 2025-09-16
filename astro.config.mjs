@@ -13,5 +13,6 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [mdx(), react()]
+  integrations: [mdx(), react()],
+  site: 'https://solipsisms.github.io',
 });
